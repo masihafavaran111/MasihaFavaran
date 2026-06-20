@@ -43,13 +43,43 @@
       margin-bottom: 10px;
     }
 
-    p {
-      font-size: 14px;
+    .bio {
+      font-size: 13px;
       line-height: 1.8;
       opacity: 0.85;
     }
 
-    /* ☰ منو */
+    /* Coming Soon */
+    .coming-soon {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 12px;
+      background: rgba(0, 255, 255, 0.08);
+      border: 1px solid rgba(0, 255, 255, 0.2);
+      color: #00ffff;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,255,255,0.2);
+    }
+
+    .coming-soon span {
+      display: block;
+    }
+
+    .blink {
+      margin-top: 5px;
+      font-weight: bold;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+
+    /* Menu */
     .menu {
       position: absolute;
       top: 15px;
@@ -81,10 +111,6 @@
     .menu-box a:hover {
       color: #00ffff;
     }
-    .bio {
-  font-size: 13px;
-  line-height: 1.8;
-    }
   </style>
 </head>
 
@@ -94,7 +120,7 @@
   <div class="menu" onclick="toggleMenu()">☰</div>
 
   <div id="menuBox" class="menu-box">
-    <a href="index.html">بیوگرافی فوران </a>
+    <a href="index.html">بیوگرافی فوران</a>
     <a href="track1.html">رفتی که نباشی</a>
   </div>
 
@@ -113,6 +139,11 @@
       🎧 Hip-Hop / Rap / R&B<br>
       📍 ایران
     </p>
+
+    <div class="coming-soon">
+      <span>NEW ALBUM</span>
+      <span class="blink">COMING SOON...</span>
+    </div>
 
   </div>
 
