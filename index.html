@@ -38,10 +38,34 @@
       box-shadow: 0 0 25px rgba(0,0,0,0.6);
     }
 
-    h1 {
-      font-size: 22px;
+    /* 🔥 HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 15px;
-      text-shadow: 0 0 10px rgba(0,255,255,0.3);
+      padding: 10px 0;
+    }
+
+    .left, .right {
+      width: 40%;
+      text-align: center;
+    }
+
+    .middle {
+      width: 20%;
+      font-size: 22px;
+      opacity: 0.6;
+    }
+
+    .en {
+      font-size: 12px;
+      opacity: 0.6;
+    }
+
+    .fa {
+      font-size: 14px;
+      font-weight: bold;
     }
 
     img {
@@ -56,13 +80,9 @@
       margin-top: 10px;
     }
 
-    .download-box {
-      margin-top: 15px;
-    }
-
     .download-btn {
       display: inline-block;
-      margin-top: 10px;
+      margin-top: 15px;
       padding: 12px 18px;
       border-radius: 10px;
       background: #00ffff;
@@ -77,11 +97,6 @@
       transform: scale(1.05);
       box-shadow: 0 0 25px #00ffff;
     }
-
-    p {
-      opacity: 0.8;
-      margin-top: 5px;
-    }
   </style>
 </head>
 
@@ -89,8 +104,20 @@
 
   <div class="box">
 
-    <!-- اسم آهنگ -->
-    <h1>Rafti Ke Nabashi</h1>
+    <!-- 🔥 HEADER -->
+    <div class="header">
+      <div class="left">
+        <div class="en">Masiha Favaran</div>
+        <div class="fa">مسیحا فوران</div>
+      </div>
+
+      <div class="middle">|</div>
+
+      <div class="right">
+        <div class="en">Rafti Ke Nabashi</div>
+        <div class="fa">رفتی که نباشی</div>
+      </div>
+    </div>
 
     <!-- عکس آهنگ -->
     <img src="CoverMusic.png" alt="cover">
@@ -101,11 +128,9 @@
     </audio>
 
     <!-- دانلود -->
-    <div class="download-box">
-      <a class="download-btn" href="RaftiKeNabashi.mp3" download>
-        ⬇ دانلود با کیفیت عالی (320 - 128)
-      </a>
-    </div>
+    <a class="download-btn" href="RaftiKeNabashi.mp3" download>
+      ⬇ دانلود با کیفیت عالی (320 - 128)
+    </a>
 
   </div>
 
