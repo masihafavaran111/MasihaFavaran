@@ -206,7 +206,34 @@
       color: #00ffff;
       opacity: 1;
     }
+.music-slider {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
 
+  display: flex;
+  gap: 12px;
+
+  width: 92%;
+  max-width: 650px;
+
+  padding: 12px;
+
+  overflow-x: auto;
+  overflow-y: hidden; /* خیلی مهم */
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+
+  scroll-snap-type: x mandatory;
+  z-index: 9999;
+
+  -webkit-overflow-scrolling: touch; /* موبایل نرم */
+    }
   </style>
 </head>
 
