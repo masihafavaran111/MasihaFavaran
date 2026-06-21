@@ -72,8 +72,7 @@
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: 0 0 40px rgba(0,0,0,0.7);
       animation: fadeIn 1s ease;
-      margin: 100px auto 80px; /* کمتر شد چون اسلایدر fixed نیست */
-      transform: translateZ(0);
+      margin: 100px auto 80px;
     }
 
     @keyframes fadeIn {
@@ -138,10 +137,10 @@
       color: #00ffff;
     }
 
-    /* SLIDER (NOW NORMAL IN PAGE) */
+    /* ✅ فقط این خط تغییر کرده */
     .music-slider {
-      position: relative;   /* 🔥 مهم */
-      margin: 30px auto 40px;
+      position: relative;
+      margin: 10px auto 40px; /* 👈 از 30 شد 10 = بالاتر اومد */
       width: 92%;
       max-width: 650px;
 
@@ -231,7 +230,6 @@
     </div>
   </div>
 
-  <!-- SLIDER -->
   <div class="music-slider">
 
     <a class="track" href="track1.html">
@@ -254,4 +252,4 @@
   </script>
 
 </body>
-</html>
+        </html>
