@@ -8,14 +8,24 @@
   <title>مسیحا فوران | Masiha Favaran Official</title>
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
-      min-height: 100vh;
+      padding: 0;
+      min-height: 100%;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
       background: radial-gradient(circle at top, #1a0033, #000000 60%, #000);
       overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      touch-action: manipulation;
     }
 
     body::before {
@@ -62,7 +72,8 @@
       border: 1px solid rgba(255,255,255,0.12);
       box-shadow: 0 0 40px rgba(0,0,0,0.7);
       animation: fadeIn 1s ease;
-      margin: 80px auto 120px;
+      margin: 100px auto 140px;
+      transform: translateZ(0);
     }
 
     @keyframes fadeIn {
