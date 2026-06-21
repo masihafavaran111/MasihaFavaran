@@ -138,6 +138,74 @@
       color: #00ffff;
       transform: translateX(5px);
     }
+    .music-slider {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+
+  width: 92%;
+  max-width: 650px;
+
+  padding: 12px;
+  overflow-x: auto;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+
+  scroll-snap-type: x mandatory;
+  z-index: 999;
+}
+
+.music-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.track {
+  flex: 0 0 auto;
+  width: 110px;
+  text-decoration: none;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  scroll-snap-align: center;
+  transition: 0.2s;
+}
+
+.track img {
+  width: 100px;
+  height: 100px;
+  border-radius: 14px;
+  object-fit: cover;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  transition: 0.2s;
+}
+
+.track span {
+  margin-top: 6px;
+  font-size: 11px;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.track:hover img {
+  transform: scale(1.06);
+  box-shadow: 0 0 25px rgba(0,255,255,0.15);
+}
+
+.track:hover span {
+  color: #00ffff;
+  opacity: 1;
+      }
   </style>
 </head>
 
