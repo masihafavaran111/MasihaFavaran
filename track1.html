@@ -6,19 +6,18 @@
   <title>Rafti Ke Nabashi</title>
 
   <style>
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
-
       background: linear-gradient(-45deg, #0f0f0f, #1a0033, #000000, #001a33);
       background-size: 400% 400%;
       animation: bg 10s ease infinite;
+      overflow-x: hidden;
+      padding-bottom: 140px; /* مهم برای اسلایدر */
     }
 
     @keyframes bg {
@@ -30,6 +29,7 @@
     .box {
       width: 90%;
       max-width: 420px;
+      margin: 80px auto 20px;
       padding: 25px;
       border-radius: 20px;
       background: rgba(255,255,255,0.05);
@@ -38,7 +38,6 @@
       box-shadow: 0 0 25px rgba(0,0,0,0.6);
     }
 
-    /* HEADER */
     .header {
       display: flex;
       justify-content: space-between;
@@ -46,25 +45,8 @@
       margin-bottom: 15px;
     }
 
-    .left, .right {
-      width: 40%;
-    }
-
-    .middle {
-      width: 20%;
-      font-size: 22px;
-      opacity: 0.6;
-    }
-
-    .en {
-      font-size: 12px;
-      opacity: 0.7;
-    }
-
-    .fa {
-      font-size: 14px;
-      font-weight: bold;
-    }
+    .en { font-size: 12px; opacity: 0.7; }
+    .fa { font-size: 14px; font-weight: bold; }
 
     img {
       width: 100%;
@@ -72,10 +54,7 @@
       margin-bottom: 15px;
     }
 
-    audio {
-      width: 100%;
-      margin-top: 10px;
-    }
+    audio { width: 100%; }
 
     .download {
       display: inline-block;
@@ -95,20 +74,19 @@
       left: 15px;
       font-size: 28px;
       cursor: pointer;
-      user-select: none;
-      z-index: 999;
+      z-index: 9999;
+      color: #00ffff;
     }
 
     .menu-box {
       display: none;
-      position: absolute;
+      position: fixed;
       top: 55px;
       left: 15px;
-      background: rgba(0,0,0,0.75);
+      background: rgba(0,0,0,0.8);
       padding: 10px;
       border-radius: 10px;
-      backdrop-filter: blur(10px);
-      z-index: 999;
+      z-index: 9999;
     }
 
     .menu-box a {
@@ -119,128 +97,112 @@
       font-size: 14px;
     }
 
-    .menu-box a:hover {
-      color: #00ffff;
-    }
+    .menu-box a:hover { color: #00ffff; }
+
+    /* SLIDER (SAME AS INDEX) */
     .music-slider {
-  position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 12px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
 
-  width: 92%;
-  max-width: 650px;
+      display: flex;
+      gap: 12px;
+      padding: 12px;
 
-  padding: 12px;
-  overflow-x: auto;
+      overflow-x: auto;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(14px);
 
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      z-index: 9999;
 
-  scroll-snap-type: x mandatory;
-  z-index: 9999;
-}
+      scroll-snap-type: x mandatory;
+    }
 
-.music-slider::-webkit-scrollbar {
-  display: none;
-}
+    .music-slider::-webkit-scrollbar {
+      display: none;
+    }
 
-.track {
-  flex: 0 0 auto;
-  width: 110px;
-  text-decoration: none;
-  color: white;
+    .track {
+      flex: 0 0 auto;
+      width: 110px;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      scroll-snap-align: center;
+    }
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    .track img {
+      width: 100px;
+      height: 100px;
+      border-radius: 14px;
+      object-fit: cover;
+    }
 
-  scroll-snap-align: center;
-}
+    .track span {
+      margin-top: 6px;
+      font-size: 11px;
+      opacity: 0.8;
+    }
 
-.track img {
-  width: 100px;
-  height: 100px;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.track span {
-  margin-top: 6px;
-  font-size: 11px;
-  opacity: 0.8;
-  text-align: center;
+    .track:hover span {
+      color: #00ffff;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- MENU -->
   <div class="menu" onclick="toggleMenu()">☰</div>
 
   <div id="menuBox" class="menu-box">
-  <a href="index.html">بیوگرافی فوران</a>
-  <a href="track1.html">Rafti Ke Nabashi</a>
-  <a href="track2.html">Infidel Coward</a>
+    <a href="index.html">بیوگرافی فوران</a>
+    <a href="track1.html">Rafti Ke Nabashi</a>
+    <a href="track2.html">Infidel Coward</a>
   </div>
 
-  <!-- BOX -->
   <div class="box">
 
-    <!-- HEADER -->
     <div class="header">
-      <div class="left">
-        <div class="en">Masiha Favaran</div>
-        <div class="fa">مسیحا فوران</div>
-      </div>
-
-      <div class="middle">|</div>
-
-      <div class="right">
-        <div class="en">Rafti Ke Nabashi</div>
-        <div class="fa">رفتی که نباشی</div>
-      </div>
+      <div class="en">Masiha Favaran</div>
+      <div class="fa">Rafti Ke Nabashi</div>
     </div>
 
-    <!-- COVER -->
     <img src="CoverMusic.png" alt="cover">
 
-    <!-- AUDIO -->
     <audio controls>
       <source src="RaftiKeNabashi.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- DOWNLOAD -->
-    <a class="download" href="RaftiKeNabashi.mp3" download>
-      🔥دانلود با کیفیت عالی🔥
+    <a class="download" href="RaftiKeNabashi.mp3" 🔥دانلود با کیفیت عالی🔥
+    </a>
+
+  </div>
+
+  <!-- SLIDER -->
+  <div class="music-slider">
+
+    <a class="track" href="track1.html">
+      <img src="CoverMusic.png" alt="">
+      <span>Rafti Ke Nabashi</span>
+    </a>
+
+    <a class="track" href="track2.html">
+      <img src="CoverInfidelCoward.jpg" alt="">
+      <span>Infidel Coward</span>
     </a>
 
   </div>
 
   <script>
     function toggleMenu() {
-      var menu = document.getElementById("menuBox");
-      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+      const menu = document.getElementById("menuBox");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
     }
   </script>
-<!-- MUSIC SLIDER -->
-<div class="music-slider">
 
-  <a class="track" href="track1.html">
-    <img src="CoverMusic.png" alt="Rafti Ke Nabashi">
-    <span>Rafti Ke Nabashi</span>
-  </a>
-
-  <a class="track" href="track2.html">
-    <img src="CoverInfidelCoward.jpg" alt="Infidel Coward">
-    <span>Infidel Coward</span>
-  </a>
-
-</div>
 </body>
 </html>
