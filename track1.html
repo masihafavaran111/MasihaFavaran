@@ -17,7 +17,7 @@
       background-size: 400% 400%;
       animation: bg 10s ease infinite;
       overflow-x: hidden;
-      padding-bottom: 140px; /* مهم برای اسلایدر */
+      padding-bottom: 40px;
     }
 
     @keyframes bg {
@@ -99,25 +99,28 @@
 
     .menu-box a:hover { color: #00ffff; }
 
-    /* SLIDER (SAME AS INDEX) */
+    /* SLIDER مثل بیوگرافی (داخل صفحه) */
     .music-slider {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: relative;
+      margin: 30px auto 20px;
+      width: 92%;
+      max-width: 650px;
 
       display: flex;
       gap: 12px;
       padding: 12px;
 
       overflow-x: auto;
-      background: rgba(0,0,0,0.75);
+      overflow-y: hidden;
+
+      background: rgba(0,0,0,0.5);
       backdrop-filter: blur(14px);
 
-      border-top: 1px solid rgba(255,255,255,0.1);
-      z-index: 9999;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
 
       scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
     }
 
     .music-slider::-webkit-scrollbar {
@@ -178,12 +181,12 @@
     </audio>
 
     <a class="download" href="RaftiKeNabashi.mp3" download>
-    Download High Quality
+      Download High Quality
     </a>
 
   </div>
 
-  <!-- SLIDER -->
+  <!-- SLIDER (مثل بیوگرافی) -->
   <div class="music-slider">
 
     <a class="track" href="track1.html">
