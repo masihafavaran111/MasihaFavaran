@@ -206,7 +206,32 @@
         font-size: 12px;
       }
     }
+.top-menu {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 35px;
 
+  padding: 12px 28px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+
+  z-index: 9999;
+  align-items: center;
+
+  /* 👇 اینو همینجا اضافه کن */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+      }
   </style>
 </head>
 
