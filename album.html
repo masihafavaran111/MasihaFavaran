@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Album Coming Soon">
+  <title>Album | Masiha Favaran</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: #0e0e12;
+      color: white;
+    }
+
+    /* Top Menu */
+    .top-menu {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 35px;
+
+      padding: 12px 28px;
+      border-radius: 999px;
+
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border: 1px solid rgba(255,255,255,0.12);
+      z-index: 1000;
+    }
+
+    .top-menu a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .top-menu a:hover {
+      color: #ff3b7b;
+    }
+
+    /* Dropdown Tracks */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 35px;
+      left: 0;
+      background: rgba(20,20,25,0.95);
+      padding: 10px;
+      border-radius: 12px;
+      min-width: 180px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 8px;
+      font-size: 13px;
+      color: white;
+    }
+
+    .dropdown-content a:hover {
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Center Coming Soon */
+    .center {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .center h1 {
+      font-size: 55px;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #ff3b7b, #7b3bff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .center p {
+      margin-top: 10px;
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    .dot {
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- MENU -->
+  <div class="top-menu">
+    <a href="#">Home</a>
+
+    <div class="dropdown">
+      <a>Tracks ▾</a>
+      <div class="dropdown-content">
+        <a href="infidel-coward.html">Infidel Coward</a>
+        <a href="rafti-ke-nabashi.html">Rafti Ke Nabashi</a>
+      </div>
+    </div>
+
+    <a href="#" style="pointer-events:none;opacity:0.5;">Albums</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- CENTER -->
+  <div class="center">
+    <h1>COMING SOON<span class="dot">...</span></h1>
+    <p>New album is on the way</p>
+  </div>
+
+</body>
+  </html>
